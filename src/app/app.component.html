@@ -10,7 +10,16 @@
           </h1>
           <p class="mb-0 text-muted small">Formate seus textos conforme as normas ABNT</p>
         </div>
-        <div class="col-md-6 text-end">
+        <div class="col-md-6 text-end d-flex justify-content-end align-items-center gap-2">
+          <button 
+            class="btn btn-outline-secondary btn-sm theme-toggle" 
+            type="button" 
+            (click)="toggleDarkMode()"
+            [attr.aria-label]="isDarkMode ? 'Ativar modo claro' : 'Ativar modo escuro'"
+            [attr.title]="isDarkMode ? 'Ativar modo claro' : 'Ativar modo escuro'"
+          >
+            <i class="bi" [ngClass]="isDarkMode ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
+          </button>
           <button class="btn btn-outline-secondary btn-sm" type="button" (click)="limparTexto()">
             <i class="bi bi-trash me-1"></i>
             Limpar

@@ -28,10 +28,43 @@
   .btn-outline-secondary {
     border-color: var(--color-text);
     color: var(--color-text);
+    background-color: transparent;
+    transition: all 0.3s ease;
 
     &:hover {
       background-color: var(--color-text);
       color: var(--color-background);
+      transform: scale(1.05);
+    }
+  }
+
+  .theme-toggle {
+    border-color: var(--color-text);
+    color: var(--color-text);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    min-width: 42px;
+    padding: 0.5rem;
+    position: relative;
+
+    &:hover {
+      background-color: var(--color-text);
+      color: var(--color-background);
+      transform: scale(1.1) rotate(15deg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: scale(0.95) rotate(0deg);
+    }
+
+    i {
+      font-size: 1.2rem;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover i {
+      transform: rotate(180deg);
     }
   }
 }
@@ -46,7 +79,7 @@
 .card {
   border: none;
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--color-background);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
@@ -70,6 +103,8 @@
 
   .card-body {
     padding: 1.5rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
   }
 }
 
@@ -80,16 +115,21 @@ textarea.form-control {
   font-size: 0.95rem;
   line-height: 1.6;
   resize: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--color-background);
+  color: var(--color-text);
 
   &:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 0 0.2rem rgba(168, 230, 207, 0.25);
     outline: none;
+    background-color: var(--color-background);
+    color: var(--color-text);
   }
 
   &::placeholder {
-    color: #999;
+    color: var(--color-text);
+    opacity: 0.6;
     font-style: italic;
   }
 }
@@ -134,15 +174,22 @@ textarea.form-control {
   min-height: 300px;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #fafafa;
+  background-color: var(--color-background);
   border: 2px dashed var(--color-accent);
   line-height: 1.8;
   font-size: 0.95rem;
   color: var(--color-text);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
   p {
     margin-bottom: 1rem;
     text-align: justify;
+    color: var(--color-text);
+  }
+
+  .text-muted {
+    color: var(--color-text) !important;
+    opacity: 0.7;
   }
 }
 
@@ -151,6 +198,12 @@ textarea.form-control {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
   border-top: 2px solid var(--color-primary);
   margin-top: auto;
+  color: var(--color-text);
+
+  .text-muted {
+    color: var(--color-text) !important;
+    opacity: 0.8;
+  }
 }
 
 // Ícones Bootstrap (simulação com classes)
