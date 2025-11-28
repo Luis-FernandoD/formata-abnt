@@ -5,3 +5,36 @@
 
 // Importar Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// Estilos globais para modo dark
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Ajustes para elementos Bootstrap no modo dark
+[data-theme="dark"],
+.dark-mode {
+  .form-control {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border-color: var(--color-accent);
+
+    &:focus {
+      background-color: var(--color-background);
+      color: var(--color-text);
+      border-color: var(--color-primary);
+    }
+  }
+
+  .card {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  .text-muted {
+    color: var(--color-text) !important;
+    opacity: 0.7;
+  }
+}
